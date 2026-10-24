@@ -1,17 +1,3 @@
-"""
-Draw-a-digit app: Gradio front end + Keras CNN trained on MNIST.
-
-Install:
-    pip install "gradio>=5" tensorflow numpy pillow
-
-Run:
-    python app.py
-Then open the local URL printed in the terminal (http://127.0.0.1:7860).
-
-The first run trains a small CNN (about 1-2 minutes on CPU) and saves it as
-mnist_cnn.keras. Later runs load the saved model instantly.
-"""
-
 import os
 import gradio as gr
 import numpy as np
@@ -21,7 +7,6 @@ from PIL import Image
 MODEL_PATH = "mnist_cnn.keras"
 IMG_SIZE = 28  # MNIST image size (28 x 28, grayscale)
 DIGIT_BOX = 20  # MNIST digits are scaled to fit a 20x20 box inside the 28x28 frame
-
 
 # ---------------------------------------------------------------
 # 1. Model: load if saved, otherwise train a small CNN
@@ -151,7 +136,6 @@ def preprocess(sketch):
 
     return (frame / 255.0).astype(np.float32)
 
-
 # ---------------------------------------------------------------
 # 3. Prediction
 # ---------------------------------------------------------------
@@ -173,7 +157,7 @@ def predict(sketch):
 # ---------------------------------------------------------------
 # 4. Gradio interface
 # ---------------------------------------------------------------
-with gr.Blocks(title="Handwritten Digit Recognizer") as demo:
+with gr.Blocks(title="DigitSketch-Ai   -Handwritten Digit Recognizer") as demo:
     gr.Markdown(
         "# Handwritten Digit Recognizer\n"
         "Draw a single digit (0-9) on the canvas. The prediction updates as you draw."
