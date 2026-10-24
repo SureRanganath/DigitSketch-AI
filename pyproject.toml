@@ -1,0 +1,10 @@
+[project]
+name = "mnist-image-project"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = [
+    "gradio>=6.30.0",
+    "matplotlib>=3.11.2",
+    "numpy>=2.4.6",
+    "tensorflow>=2.21.0",
+]
